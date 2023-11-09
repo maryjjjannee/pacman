@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
   static int Squares = 216;
   int score = 0;
   bool start = true;
-  String BigText = "Pac Man";
+  String BigText = "PacMan";
   // our starting cord
   String direction = "right";
   int player = 193;
@@ -53,6 +53,7 @@ class _HomeState extends State<Home> {
   List GhostsP = [20, 14, 74];
   List<int> Food = [];
   List<int> br = [
+    // รายการของตำแหน่งที่ไม่สามารถเคลื่อนที่ได้
     0,
     1,
     2,
@@ -289,21 +290,21 @@ class _HomeState extends State<Home> {
 
       switch (direction) {
         case "right":
-          return Player("assets/5a1887148d421802430d2d04.png");
+          return Player("assets/pacman.png");
 
         case "left":
           return Transform.rotate(
-              angle: pi, child: Player("assets/5a1887148d421802430d2d04.png"));
+              angle: pi, child: Player("assets/pacman.png"));
 
         case 'up':
           return Transform.rotate(
               angle: 3 * pi / 2,
-              child: Player("assets/5a1887148d421802430d2d04.png"));
+              child: Player("assets/pacman.png"));
 
         case 'down':
           return Transform.rotate(
               angle: pi / 2,
-              child: Player("assets/5a1887148d421802430d2d04.png"));
+              child: Player("assets/pacman.png"));
         default:
           return Container();
       }
